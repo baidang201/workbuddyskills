@@ -44,7 +44,7 @@ lovrabet app list --include-unpublished
 - `data.items[].enableI18n`：应用是否开启国际化；旧缓存或远端缺失该字段时为 `null`
 - `data.items[].languages`：应用支持的语种列表，来自平台真实 `i18nInfo.langs`
 - `data.items[].i18nInfo`：平台返回的应用国际化配置
-- `data.items[].locale`：CLI 本地兼容配置字段，不代表应用支持语种，可能为 `null`
+- `data.items[].locale`：本地应用本地化设置覆盖，可能为 `null`；不是 CLI 语言，也不代表平台支持语种
 - `data.meta.env`：环境
 - `data.meta.source`：来源
 - `data.meta.fetchedAt`：最近同步时间
@@ -74,6 +74,8 @@ lovrabet app list --include-unpublished
 `defaultApp` 只是默认候选，不是强上下文。未显式指定 app 且存在 `defaultApp` 时，应先用 `dataset list --name <关键词>` 验证默认候选；命中不合理时，再通过 `app list` 扩大搜索。
 
 ## 如何选择使用哪个应用
+
+以下 `--name <关键词>` 用于数据集名称搜索；用户给的是物理表名时，改用 `--table-name <表名前缀>` 验证默认候选或其他候选 app，无需补齐名称。匹配规则见 [数据集发现](dataset-discovery-workflow.md)。
 
 推荐方法不是只看 app 名，而是：
 

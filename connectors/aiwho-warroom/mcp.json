@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "warroom-webhook": {
+      "type": "streamableHttp",
+      "url": "https://wr.aiwho.cn/api/v2/mcp",
+      "timeout": 30000
+    }
+  }
+}

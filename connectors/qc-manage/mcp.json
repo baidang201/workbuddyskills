@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "qc-manage": {
+      "type": "streamableHttp",
+      "url": "https://iautomark.sdm.qq.com/qc-manage-mcp/mcp",
+      "headers": {
+        "X-Tenant-Id": "120009"
+      },
+      "timeout": 120000
+    }
+  }
+}
+

@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "market-expert-gateway": {
+      "type": "streamableHttp",
+      "url": "https://iautomark.sdm.qq.com/market-expert/mcp",
+      "timeout": 30000
+    }
+  }
+}

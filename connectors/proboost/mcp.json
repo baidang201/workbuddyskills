@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "proboost-tiktok-amazon-patent-mcp": {
+      "type": "sse",
+      "url": "https://mcp.openboostai.com/mcp-servers/oauth/proboost-tiktok-amazon-patent-mcp/sse?invite=WORKBUDDY",
+      "timeout": 120000
+    }
+  }
+}

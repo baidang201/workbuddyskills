@@ -1,0 +1,22 @@
+{
+    "title": "东北证券 API Key 配置",
+    "title_en": "Northeast Securities API Key Configuration",
+    "description": "连接东北证券 MCP，用自然语言查询 A 股、港股、基金与宏观行业的行情、财务、估值、资金流、公告、研报、资讯舆情等结构化数据，支持多维选股、多维选基、行业速报、政策解读与舆情风险预警等。Token 与接口地址仅存储在本机~/.workbuddy 下。",
+    "description_en": "Connect to the Northeast Securities MCP to query structured data in natural language — quotes, financials, valuation, fund flows, announcements, research reports and news sentiment for A-shares, Hong Kong stocks, funds and macro industries — supporting multi-dimensional stock screening, fund screening, industry briefs, policy interpretation and sentiment risk alerts. The token and endpoint URL are stored locally under ~/.workbuddy on your machine only.",
+    "docUrl": "https://mgw.nesc.cn/h5-member-center/apikey-register",
+    "docLabel": "如何登录开通引导页面获取 API Key 并配置东北证券 MCP",
+    "docLabel_en": "How to sign in and get your Northeast Securities API Key, then configure the MCP",
+    "fields": [
+        {
+            "key": "DBZQ_TOKEN",
+            "label": "Northeast Securities API Key",
+            "label_en": "Northeast Securities API Key",
+            "placeholder": "请填写东北证券 API Key",
+            "placeholder_en": "Enter your Northeast Securities API Key",
+            "type": "password",
+            "required": true,
+            "description": "用于访问东北证券 MCP 的个人访问令牌，只填写 API Key 本体。",
+            "description_en": "Personal access token for the Northeast Securities MCP. Enter the API Key itself only."
+        }
+    ]
+}

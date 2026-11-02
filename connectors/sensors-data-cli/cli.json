@@ -1,0 +1,40 @@
+{
+  "runtime": {
+    "type": "python",
+    "version": ">=3.11"
+  },
+  "env": {
+    "PIP_USER": "0"
+  },
+  "versionCheck": {
+    "command": {
+      "darwin": "python -m cli.main --version",
+      "linux": "python -m cli.main --version",
+      "win32": "python -m cli.main --version"
+    },
+    "minVersion": "2.0.1"
+  },
+  "init": {
+    "darwin": "python -m pip install --quiet --disable-pip-version-check --upgrade https://jfrog.sensorsdata.cn/artifactory/dragon-release/com.sensorsdata.sai/sensors_cli/sensors_cli-2.0.1-py3-none-any.whl",
+    "linux": "python -m pip install --quiet --disable-pip-version-check --upgrade https://jfrog.sensorsdata.cn/artifactory/dragon-release/com.sensorsdata.sai/sensors_cli/sensors_cli-2.0.1-py3-none-any.whl",
+    "win32": "python -m pip install --quiet --disable-pip-version-check --upgrade https://jfrog.sensorsdata.cn/artifactory/dragon-release/com.sensorsdata.sai/sensors_cli/sensors_cli-2.0.1-py3-none-any.whl"
+  },
+  "auth": {
+    "darwin": "python -m cli.main connector auth",
+    "linux": "python -m cli.main connector auth",
+    "win32": "python -m cli.main connector auth"
+  },
+  "unAuth": {
+    "darwin": "python -m cli.main connector unAuth",
+    "linux": "python -m cli.main connector unAuth",
+    "win32": "python -m cli.main connector unAuth"
+  },
+  "status": {
+    "darwin": "python -m cli.main connector status",
+    "linux": "python -m cli.main connector status",
+    "win32": "python -m cli.main connector status"
+  },
+  "statusMatch": "\"connected\":\\s*true",
+  "authUrlDomain": "127.0.0.1",
+  "authWaitForExit": true
+}

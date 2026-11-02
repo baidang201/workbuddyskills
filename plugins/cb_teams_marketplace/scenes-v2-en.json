@@ -1,0 +1,350 @@
+[
+  {
+    "id": 47,
+    "unified_id": 130,
+    "name": "Documents",
+    "icon": "documentation",
+    "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
+    "plugins": [
+      {
+        "id": 0,
+        "name": "workbuddy-docx",
+        "marketplaceName": "workbuddy-builtin"
+      }
+    ],
+    "prompts": [
+      "Write an email asking a colleague for feedback on my draft. Deliver a copy-ready email: a subject line, a first paragraph on where the item stands now, a second giving the exact time I need their reply by, and a third explaining how to make it easy for them (for example, replying to just a few items). Keep it polite but clear; leave the colleague's name and the dates blank.",
+      "Using fictional administrative work, write a 500-Chinese-character weekly report around training arrangements, materials procurement and next-week preparation. State achievements, problems and next steps. Label it as an example and do not invent performance figures. After writing the template, ask whether I want to add specific information to make a report ready to submit.",
+      "Create a project meeting-minutes template covering a meeting summary, key discussions, trade-offs, decisions and action items. If no transcript is provided, demonstrate the result with a short simulated case labeled “Example.” If text is provided, organize it faithfully without inventing information. List task, owner and deadline for action items, marking missing fields “Not specified.” Use polished Markdown, highlight key conclusions and include an action table. End by inviting the user to provide meeting notes.",
+      "Organize my materials into knowledge cards and deliver a single-page HTML file. Use a scrapbook style with highlighted annotations and compact sections. If no materials are provided, use photography basics as a clearly labeled example. Use comparison images to explain background blur, motion sharpness and image noise, alongside settings and shooting advice, with film-frame borders. After completion, ask what materials I want to organize and what image style I prefer; I can paste or upload them."
+    ],
+    "promptTitles": [
+      "Write a polite but firm follow-up email",
+      "Write a weekly report example that goes beyond listing tasks",
+      "Create a project meeting-minutes template",
+      "Turn materials into easy-to-understand visual notes"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 52,
+    "unified_id": 135,
+    "name": "Finance",
+    "icon": "financial-services",
+    "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
+    "plugins": [],
+    "prompts": [
+      "Search the last 24 hours of official financial news, pick up to 3 items and write the event, what changed and what to watch, delivered as a visual Markdown brief. Sources must be original links on official institutional sites (not reposts or aggregators), with the publication time to the hour and the original URL. Give fewer items if that is all you find; if you cannot go online, say so.",
+      "Screen for high-ROE, low-debt companies. By default use ROE above 15% and a debt-to-asset ratio below 50% over the past year, and output the candidate companies, their metric values and the data date. If I don't specify a market, start with A-shares as the example and note that the criteria can be adjusted.",
+      "Create a single-file HTML financial calculator. Input revenue, net profit, average total assets, period-end assets and liabilities to calculate net margin, return on assets and the debt-to-asset ratio. Show formulas and do not calculate when an input is missing or a denominator is zero. Include data labeled “Teaching example” and verify the results.",
+      "Create an annual-report audit preparation checklist covering financial statements, bank and counterparty confirmations, revenue and costs, inventory and assets, tax, contracts and internal controls. Use a table with document name, owner, deadline, key checks and completion status, highlighting likely delays. Adapt to any industry provided; otherwise deliver a general-company version first. Leave unknown people and dates blank. After delivery, ask in chat whether to add industry-specific items."
+    ],
+    "promptTitles": [
+      "Understand the key points of 3 financial headlines",
+      "Screen for high-ROE, low-debt companies over the past year",
+      "Build a return-on-assets and debt-ratio calculator",
+      "Create an annual audit preparation checklist"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 48,
+    "unified_id": 131,
+    "name": "Data",
+    "icon": "data-visualization",
+    "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
+    "plugins": [
+      {
+        "id": 0,
+        "name": "workbuddy-sheetagent",
+        "marketplaceName": "workbuddy-builtin"
+      }
+    ],
+    "prompts": [
+      "Calculate conversion rates and losses through visits, leads, trials and purchases. Separately identify the stage with the most people lost and the highest loss rate, and recommend improvements with causes labeled as hypotheses to validate. If no data is provided, demonstrate with 1000, 200, 80 and 20, labeled “Example.” Deliver an editable single-page HTML report emphasizing the funnel and conclusions. Show input errors inline and perform validation in the background.",
+      "Create an XLSX project-management sheet for tracking tasks across the full project lifecycle, including task, phase, owner, start and due dates, status, and dependencies. Use formulas to summarize completion by status and exclude blank rows. Keep the visual style elegant and minimal, add three clearly labeled sample rows, and verify the summary results.",
+      "Build a break-even sheet that recalculates itself. Deliver an XLSX split into an inputs area and a results area: the inputs area holds fixed cost, unit price and unit variable cost; the results area uses formulas to work out contribution margin, break-even units and break-even revenue, and shows a warning instead of a negative number when the unit price is not above the unit variable cost. Results recalculate automatically when inputs change.",
+      "Organize my numbers into an analysis table with consistent items, periods and units. Calculate applicable totals, maxima and minima, and produce a visual analysis. Without data, use Q1 sales of 120 units, Q2 of 150 and Q3 of 90 as a clearly labeled example. Separate facts from causal hypotheses. Suggest causes only when supported, alongside evidence within the data and information needed for validation; do not force 3 explanations or present speculation as fact. Prioritize any additional context I provide without asking first."
+    ],
+    "promptTitles": [
+      "Analyze a conversion funnel and suggest improvements",
+      "Create an elegant, minimal project management sheet",
+      "Create an automatically calculated break-even sheet",
+      "Organize some numbers into an analysis table"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 49,
+    "unified_id": 132,
+    "name": "Slides",
+    "icon": "slides-creation",
+    "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
+    "plugins": [
+      {
+        "id": 0,
+        "name": "workbuddy-pptx",
+        "marketplaceName": "workbuddy-builtin"
+      }
+    ],
+    "prompts": [
+      "Make a 10-slide year-end review deck for an individual or a team, covering the year's goals, key projects, core results, lessons learned and next year's plans, using placeholders where information is missing. Use a clean business style: white background with deep blue (#173A63) and warm orange (#F08A4B). One core conclusion per slide, presented through big numbers, project cards, milestones and a quarterly roadmap - clear and restrained, highlighting results, contribution and growth.",
+      "Make a deck analysing the past year's AI trends, for industry research and a management briefing. Go online to gather developments in agents, multimodality, on-device AI, embodied AI, AI coding and compute chips, and present the latest progress, commercial value and forward view. Use a future-intelligence-briefing style: near-black blue (#090D18) with electric cyan (#38E8D4) and digital purple (#846BFF). Use trend matrices, vendor comparisons and market forecast charts - frontier, precise and opinionated.",
+      "Build a brand analysis deck on Pop Mart. Go online and cover the brand's history, core IPs, the blind-box mechanic, customer profiles, channel strategy, overseas markets and business model. Use a designer-toy catalogue style: cream white (#F7F3EE) with bubblegum pink (#F4A8C4), bright red (#E94752) and lake blue (#64C9D4). Use large IP imagery, rounded cards, sticker labels, an IP matrix and an overseas map - young and vivid with a collector's feel, but not childish.",
+      "Make a deck introducing the culture of Journey to the West, covering its background, main storyline, key characters, classic episodes, the pantheon of gods and demons, and its cultural influence. Use an eastern myth scroll style: rice-paper off-white (#F3E8D2) with cinnabar red (#B83A32), ink black and gilded gold (#C89B4B). Use the pilgrimage route, a character relationship chart, magic-weapon cards and ink-wash illustrations, with page numbers styled as seals - classical and vivid, both narrative and cultural."
+    ],
+    "promptTitles": [
+      "Make me a 10-slide year-end review template",
+      "Make me a deck on the past year's AI trends",
+      "A brand analysis deck on Pop Mart",
+      "Create a presentation introducing Journey to the West"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 50,
+    "unified_id": 133,
+    "name": "Deep Research",
+    "icon": "deep-research",
+    "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
+    "plugins": [
+      {
+        "id": 0,
+        "name": "deep-research",
+        "marketplaceName": "cb_teams_marketplace"
+      }
+    ],
+    "prompts": [
+      "Research enterprise agents’ actual applications in customer service, R&D and data analysis. Search online for representative cases and use a Markdown table to list use case, deployment status, actual results and source date. Distinguish confirmed deployments, demonstrations only and insufficient information. Mark undisclosed performance figures accordingly. End with implementation conditions and main limitations.",
+      "Research the company I specify, analyzing revenue sources, cost structure, core customers, competitive barriers and main risks. Validate judgments using key data from the latest 3 periods and evidence from comparable companies. Deliver a Markdown research report with a short conclusion summary, the necessary analysis and evidence, and 3 indicators to monitor. If no company name or ticker is provided, ask briefly only for that. State dates and sources, distinguish facts, inference and information gaps, and do not give direct buy or sell advice.",
+      "Research the low-altitude economy and judge which links have a verifiable revenue loop and which are still pilots. Deliver a Markdown research brief: a one-sentence conclusion first; then three sections - aircraft manufacturing, infrastructure and operations services - each covering what has worked and what has not, with supporting evidence; finally 2 to 3 signals to watch that would confirm or break the judgement. Cite a source and date for every key conclusion, and separate commercial projects from pilots. Treat figures taken from media coverage as leads only, never as conclusions; write [data to verify] where something cannot be confirmed and say what is missing. Length serves the judgement - don't cut evidence to hit a page count.",
+      "Compare premium electric toothbrushes and identify differences in a shared-dimension table: brands across columns and cleaning mechanism, battery life, noise, consumable cost and after-sales policy down rows. Use the same dimensions for every brand, mark unpublished metrics “Not disclosed” and do not fill them with estimates. Below the table distinguish experience differences reported by users from differences in marketing claims."
+    ],
+    "promptTitles": [
+      "Research real-world AI agent applications and results",
+      "How does a company earn money and compete",
+      "Find low-altitude economy segments with real revenue",
+      "Compare premium electric toothbrushes"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 51,
+    "unified_id": 134,
+    "name": "Proposals",
+    "icon": "lightbulb",
+    "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
+    "plugins": [],
+    "prompts": [
+      "Create a promotion plan for the 7 days starting on a new product’s launch day. Deliver a single-page HTML file with a timeline showing the first-week schedule and an action table listing each day’s channels, content theme, concrete deliverables and observation metrics. Highlight target users and core selling points, and prioritize low-cost validation. Use any available product information; otherwise demonstrate a complete example with a fictional note-taking tool, clearly labeled “Example,” without inventing promotional results. After delivery, briefly ask in chat which new product I want to promote, then adapt the plan.",
+      "Create a Markdown customer-follow-up table with contact timing, communication goal, one usable line and conditions for pausing. Use any client background provided; otherwise use follow-up after an initial consulting-service conversation as an example, with subsequent actions for different responses. Respect refusals and avoid repeated sales pressure. Afterwards ask in chat what stage the client conversation has reached.",
+      "Create an actionable Markdown pricing-test plan for a new product. Use available product information; otherwise demonstrate a complete example with a fictional note-taking tool. Compare 2 prices and specify test participants, execution steps, a feedback-record table and how to adjust pricing under different results. Keep the product and presentation conditions consistent. Clearly label example prices, do not invent test results, and do not treat small samples as market conclusions. Deliver the plan first, then ask in chat which new product I want to test.",
+      "Plan a 30-minute team knowledge-sharing session. Deliver a one-table agenda (time slot, segment, key content, owner), splitting the 30 minutes as 5/15/5/5 for opening, sharing, discussion and agreeing actions, plus a materials checklist. Leave the actual times and owners blank for me to fill in."
+    ],
+    "promptTitles": [
+      "Write a first-week promotion plan for a new product launch",
+      "Plan customer follow-up timing and conversation scripts",
+      "Design a pricing-test plan for a new product",
+      "Plan a thirty-minute team sharing session"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 53,
+    "unified_id": 136,
+    "name": "Scheduled Tasks",
+    "icon": "timer",
+    "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
+    "plugins": [],
+    "prompts": [
+      "Every Monday through Friday at 8:30 in my local time zone, remind me to check meetings and to-dos. Include 3 checks: meeting times, today’s priorities and preparation materials. Use actual calendar and task content if provided; otherwise use a checklist. After creation, state the next reminder time.",
+      "Every Friday at 17:00, remind me to organise this week's work, with three fill-in slots in the reminder: this week's results, the problems encountered, and next week's priorities. Set the time directly in my local time zone, with no further confirmation, and report the next date and time when done.",
+      "Every Monday at 9:00, give me a brief on new AI developments: pick five, each a one-line summary with a source link, and mark it as not found if no source can be located. Set it up directly in my local time zone and reply with one line giving the next trigger time when done.",
+      "Remind me at 9:00 in my local time zone, 30 days before a contract expires, to check renewal. Include the expiry date, renewal intention and materials to prepare. Ask for the expiry date if missing. If the reminder time has passed but the contract has not expired, ask whether to remind me today. If the contract has expired, explain and confirm next arrangements. After creation, state the exact reminder time."
+    ],
+    "promptTitles": [
+      "At 8:30 on weekdays, remind me to check meetings and to-dos",
+      "Every Friday, remind me to review this week’s work",
+      "Give me a weekly AI news brief",
+      "Remind me 30 days before a contract expires to check renewal"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 54,
+    "unified_id": 137,
+    "name": "Development",
+    "icon": "daily-development",
+    "mode": "coding",
+    "plugins": [],
+    "prompts": [
+      "Demonstrate a single click submitting twice by binding the form listener twice. Write a minimal HTML reproduction and the fixed version side by side on the same offline page so they can be compared. Each shows its submit count. Show only this one cause and prove it.",
+      "Using a fictional create-task endpoint as the example, write a JavaScript validation function: title must be non-empty after trimming, dueDate is optional but must be a valid YYYY-MM-DD when present. Return a single consistent error field, include 2 test cases, and deliver one JS file.",
+      "Write a discount function in Python: 10 off for every full 100, capped at 50, rejecting negative numbers and non-numeric input. Include tests for 99, 100, 600 and invalid input, and deliver one runnable code file.",
+      "Act as a senior code reviewer and review the given change strictly, with the merge decision as the goal. Principles: every point must point to a specific file, symbol or diff - no vague commentary. Report blockers first, then improvements. Separate fact from inference, and flag clearly when information is missing. For each issue give the cause, the fix and how to verify it. Default to a production lens: concurrency, retry on failure, permission boundaries and data consistency."
+    ],
+    "promptTitles": [
+      "Explain why one click submits twice",
+      "Add validation and tests to an API",
+      "Write and test a discount function",
+      "Review this code for critical issues"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 55,
+    "unified_id": 138,
+    "name": "Websites",
+    "icon": "website-development",
+    "mode": "coding",
+    "plugins": [
+      {
+        "id": 0,
+        "name": "modern-webapp",
+        "marketplaceName": "cb_teams_marketplace"
+      }
+    ],
+    "prompts": [
+      "Build a to-do list website for today, supporting add, check off, delete and a remaining count, ignoring blank tasks, usable on a phone, requiring user login and data stored in a cloud database, then publish it live.",
+      "Build a corporate website for me. The company name is [company name] and its main business is [business description]. Requirements: a home page, an About us page, a Products and services page and a Contact page; a simple, confident style; user login; site data in a cloud database and images and files in cloud storage; then publish it live.",
+      "Build a data table app supporting add, edit, delete and query, filtering by region and sorting by amount. Include 10 rows of fictional sales data. Store the data in a cloud database, then publish it live.",
+      "Build an e-commerce home page selling [product type]. Requirements: a carousel, product categories, a featured products section and a promotions area; user login; product data in a cloud database and product images in cloud storage."
+    ],
+    "promptTitles": [
+      "Build a to-do list website for today",
+      "Build a four-page company website",
+      "Add filtering and sorting to a data table",
+      "Build an e-commerce storefront homepage"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 58,
+    "unified_id": 141,
+    "name": "Mini Programs",
+    "icon": "mini-program",
+    "mode": "coding",
+    "plugins": [],
+    "prompts": [
+      "Build a coffee-ordering mini program, then preview and debug it on a real device in WeChat DevTools.",
+      "Build an event sign-up WeChat mini program. The event is called [event name] and it is for [audience]. Requirements: a home page, an event detail page, online sign-up and a sign-up records page; WeChat authorised login; event and sign-up data in a cloud database and event images in cloud storage. Use a clean mobile mini-program design that fits the scenario, emphasising the core content and main action, with a clear information hierarchy, a compact comfortable layout and a consistent icon set. No emoji.",
+      "Build a food-ordering WeChat mini program. The restaurant is called [restaurant name] and serves [cuisine type]. Requirements: a home page, dish categories, dish detail, cart and order history pages; WeChat authorised login; dish and order data in a cloud database and dish images in cloud storage. Use a clean mobile mini-program design that fits the scenario, emphasising the core content and main action, with a clear information hierarchy, a compact comfortable layout and a consistent icon set. No emoji.",
+      "Build a store booking WeChat mini program. The store is called [store name] and offers [service type]. Requirements: a home page, a service list, booking time selection and booking records pages; WeChat authorised login; booking data in a cloud database and service images in cloud storage. Use a clean mobile mini-program design that fits the scenario, emphasising the core content and main action, with a clear information hierarchy, a compact comfortable layout and a consistent icon set. No emoji."
+    ],
+    "promptTitles": [
+      "Build a coffee-shop ordering mini program",
+      "Build an event registration mini program",
+      "Build a restaurant ordering mini program",
+      "Turn store service booking into a mini program"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 56,
+    "unified_id": 139,
+    "name": "Agents",
+    "icon": "agent-apps",
+    "mode": "coding",
+    "plugins": [
+      {
+        "id": 0,
+        "name": "codebuddy-chat-web",
+        "marketplaceName": "cb_teams_marketplace"
+      },
+      {
+        "id": 1,
+        "name": "agent-sdk-dev",
+        "marketplaceName": "cb_teams_marketplace"
+      }
+    ],
+    "prompts": [
+      "Build a knowledge Q&A agent web app that takes user questions and answers from a knowledge base. Connect a large language model and publish it live. Every answer must cite its evidence: the document name and the exact passage used, pointing back to the original text. When nothing is retrieved, say plainly that it was not found instead of answering from the model's memory.",
+      "Build a customer support agent web app. Requirements: multi-turn conversation, FAQ knowledge-base retrieval, automatic intent detection (refund, order lookup, technical support), automatic handoff to a human when it cannot resolve the issue, persistent conversation history, and an admin console showing conversation logs and satisfaction stats. Store data in the cloud, connect a large language model and publish it live.",
+      "Build a personal information butler web app where users capture scattered ideas, references and to-dos, with automatic categorisation, summaries and links between related items. Support keyword search, Q&A, extraction of key points and to-do tidy-up, and generate periodic summaries and suggested next actions from what is already stored. Data in the cloud, a large language model connected, published live.",
+      "Build a data analysis agent web app where users upload or enter data, then ask questions in natural language for queries, trend analysis, anomaly detection and metric comparisons, with automatically generated conclusions and visual charts. Data in a cloud database, a large language model connected, published live."
+    ],
+    "promptTitles": [
+      "Build a citation-based knowledge agent",
+      "A support agent that hands off to a human",
+      "A personal assistant agent for notes, links and to-dos",
+      "An agent that queries your data and charts the result"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 57,
+    "unified_id": 140,
+    "name": "Skills",
+    "icon": "skill-development",
+    "mode": "coding",
+    "plugins": [
+      {
+        "id": 0,
+        "name": "skill-creator",
+        "marketplaceName": "cb_teams_marketplace"
+      }
+    ],
+    "prompts": [
+      "Write a minimal working Skill from scratch. Deliver a concise SKILL.md covering the trigger conditions, inputs, steps and output, plus one example invocation. If no purpose is given, use text summarisation as the default example. Hand over an editable skill definition first, and don't keep asking for background. When it is done, offer two options: A. try the Skill on one real work request; B. add another example invocation to verify the steps.",
+      "Turn this workflow into a reusable Skill. Ask one question first: is this client workflow for solo freelance work or for a team? If I have already said, use what I said and don't ask again; if I haven't, wait for my answer. Package \"setting up a new client, verifying documents, creating the group chat and making first contact\" into a SKILL.md, with each step stating its input, output and completion condition. Add one short fictional client example, listing missing information as items to supply. Deliver the Skill definition only - don't perform any client actions.",
+      "Create a document proofreading Skill that checks for typos, conflicting dates, inconsistent number definitions and missing conditions, listing at most 5 items, with 2 sample sentences built in. Deliver a SKILL.md containing the name, description, trigger conditions and steps - don't install it.",
+      "Create a research-evidence checking Skill that verifies whether conclusions match their evidence, whether the definitions are consistent and how missing evidence should be flagged, with 2 examples. Deliver a SKILL.md containing the name, description, trigger conditions and steps - don't install it."
+    ],
+    "promptTitles": [
+      "Write a minimal usable Skill",
+      "Turn a workflow into a reusable Skill",
+      "Create a proofreading Skill for documents",
+      "Build a research-evidence checking Skill"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 59,
+    "unified_id": 142,
+    "name": "Tech Docs",
+    "icon": "documentation-tools",
+    "mode": "coding",
+    "plugins": [],
+    "prompts": [
+      "Scan the current project and generate a README.md with these sections: what the project is for, installation steps, how to run it, usage examples, key configuration notes, common questions and known limitations. I haven't settled the actual commands, paths and addresses yet, so leave them blank for me to fill in. Don't invent files or scripts that don't exist.",
+      "Generate an API document anyone can follow. From the requirements below, produce OpenAPI 3.1 YAML (savable directly as openapi.yaml): a fictional GET /tasks, 2 query parameters, a success JSON, 2 error responses and Bearer auth; servers set to https://api.example.com; examples consistent with the schema fields; plus a note that it is illustrative only. Output YAML only, with no explanation.",
+      "Write an onboarding guide template for new developers, with four sections: environment setup, getting the code, starting it up and common problems. Leave the commands as placeholders. Deliver one MD file.",
+      "Build an offline single-file HTML troubleshooting guide with 5 fictional errors built in, filterable by keyword and expandable to show the cause and a 2-step fix. Readable on a phone, searching only the built-in content, with no log system connected. Check the filtering."
+    ],
+    "promptTitles": [
+      "Write a beginner-friendly project README",
+      "Generate an easy-to-read API document",
+      "Write a developer onboarding guide template",
+      "Turn common errors into a troubleshooting guide"
+    ],
+    "target": "all"
+  }
+]

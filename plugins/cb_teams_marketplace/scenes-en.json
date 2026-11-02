@@ -5,12 +5,15 @@
     "name": "Documentation",
     "icon": "documentation",
     "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
     "plugins": [
       {
         "id": 0,
-        "name": "document-skills",
-        "marketplaceName": "cb_teams_marketplace",
-        "marketplaceUrl": "https://cnb.cool/codebuddy/cbteamsmarketplace"
+        "name": "tencent-docx",
+        "marketplaceName": "workbuddy-builtin"
       }
     ],
     "prompts": [
@@ -33,6 +36,10 @@
     "name": "Financial Services",
     "icon": "financial-services",
     "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
     "plugins": [
       {
         "id": 0,
@@ -92,6 +99,10 @@
     "name": "Visualization",
     "icon": "data-visualization",
     "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
     "plugins": [
       {
         "id": 0,
@@ -101,9 +112,8 @@
       },
       {
         "id": 1,
-        "name": "document-skills",
-        "marketplaceName": "cb_teams_marketplace",
-        "marketplaceUrl": "https://cnb.cool/codebuddy/cbteamsmarketplace"
+        "name": "sheetagent",
+        "marketplaceName": "workbuddy-builtin"
       }
     ],
     "prompts": [
@@ -128,14 +138,17 @@
     "name": "Personal Workspace",
     "icon": "tool-case",
     "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
     "plugins": [],
     "expert": {
-      "id": "workspace-builder",
+      "id": "ex_kXnGMfUfWS6d",
       "name": "小台",
       "profession": "工作台搭建师",
       "expertType": "agent",
-      "source": "expert-marketplace",
-      "expert_id": "ex_kXnGMfUfWS6d"
+      "source": "expert-marketplace"
     },
     "prompts": [
       "Create an integrated life-management workbench for a broad everyday audience and deliver it as a single HTML file. Inline all CSS, JavaScript, icons, and assets; use no external components; make it reliable on both desktop and mobile.\n\nThe workbench should include at least: a daily life score; personal finance tracking with income and expenses, budgets, monthly comparison, category filters, spending breakdown, and Excel export; habit tracking where users can add or delete habits and choose check, counter, or numeric tracking with a 30-day heatmap; weight-loss tracking with weight and body-fat entries, a 7-day average, BMI, goal progress, calorie deficit guidance, and customizable weekly plans; schedule planning; a shopping list; and a books/film/series/anime library with status, star rating, short review, wall/list views, and annual statistics.\n\nSave input immediately to localStorage so it remains after closing the page. Provide JSON backup export and unlimited import, remind users to back up after 20 new items, clearly report storage failures or corrupted data, and allow recovery. Include a small set of removable demo entries. Keep the visual direction restrained, polished, and warm rather than using a generic AI-card template.",
@@ -154,11 +167,48 @@
     "target": "all"
   },
   {
+    "id": 1,
+    "unified_id": 105,
+    "name": "Slides Creation",
+    "icon": "slides-creation",
+    "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
+    "plugins": [
+      {
+        "id": 0,
+        "name": "tencent-pptx",
+        "marketplaceName": "workbuddy-builtin"
+      }
+    ],
+    "prompts": [
+      "Create a popular-science PPT on the history of AI, organized as a timeline covering symbolism, expert systems, machine learning, deep learning, and large models, highlighting key figures, technologies, and events. Use a \"Tech Archive\" style: deep navy-black (#0B1020) paired with electric blue (#3478F6) and orange-red (#FF6B4A). Focus on a vertical timeline, historical event cards, and technology evolution diagrams; use Source Han Sans for Chinese text, combining historical depth with a futuristic tech feel.",
+      "Create a 2026 AI trends analysis PPT for industry research and executive reporting. Research online the trends in agents, multimodal AI, on-device AI, embodied intelligence, AI coding, and compute chips, presenting the latest progress, business value, and future outlook. Use a \"Future Intelligence Briefing\" style: black-blue (#090D18) paired with neon cyan (#38E8D4) and digital purple (#846BFF). Use trend matrices, vendor comparisons, and market forecast charts—cutting-edge, precise, and opinionated.",
+      "Create a 10-page personal or team year-end review PPT covering annual goals, key projects, core achievements, problem retrospectives, and next-year plans; use placeholders for missing information. Use a clean business style: white background paired with deep blue (#173A63) and warm orange (#F08A4B). Express one core takeaway per page, presented through big numbers, project cards, milestones, and quarterly roadmaps—clear and restrained, highlighting results, contributions, and growth.",
+      "Create a cultural introduction PPT for \"Journey to the West\", covering its creation background, main storyline, key characters, classic episodes, the pantheon of gods and demons, and its cultural influence. Use an \"Eastern Mythology Scroll\" style: rice-paper off-white (#F3E8D2) paired with cinnabar red (#B83A32), ink black, and gilded gold (#C89B4B). Feature the pilgrimage route, character relationship maps, magical-artifact cards, and ink-wash illustrations; design page numbers as seal stamps—classical and vivid, combining storytelling with cultural depth.",
+      "Create a Pop Mart brand analysis PPT; research online the brand's development, core IPs, blind-box mechanics, user profiles, channel layout, overseas markets, and business model. Use a \"Designer Toy Exhibition Catalog\" style: cream white (#F7F3EE) paired with Pop pink (#F4A8C4), bright red (#E94752), and lagoon blue (#64C9D4). Feature large IP images, rounded cards, sticker labels, an IP matrix, and an overseas map—young, vivid, and collectible without being childish."
+    ],
+    "promptTitles": [
+      "AI History PPT",
+      "AI Trends PPT",
+      "Year-End Review PPT",
+      "Journey to the West PPT",
+      "Pop Mart PPT"
+    ],
+    "target": "all"
+  },
+  {
     "id": 3,
     "unified_id": 103,
     "name": "Deep Research",
     "icon": "deep-research",
     "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
     "plugins": [
       {
         "id": 0,
@@ -187,6 +237,10 @@
     "name": "Video Generation",
     "icon": "video-generation",
     "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
     "plugins": [
       {
         "id": 0,
@@ -215,39 +269,15 @@
     "target": "all"
   },
   {
-    "id": 1,
-    "unified_id": 105,
-    "name": "Slides Creation",
-    "icon": "slides-creation",
-    "mode": "working",
-    "plugins": [
-      {
-        "id": 0,
-        "name": "ppt-implement",
-        "marketplaceName": "cb_teams_marketplace",
-        "marketplaceUrl": "https://cnb.cool/codebuddy/cbteamsmarketplace"
-      }
-    ],
-    "prompts": [
-      "Create a PowerPoint presentation on the development history of artificial intelligence (AI).",
-      "Create a PowerPoint presentation on 2026 trends in AI agents.",
-      "Create a minimalist-style PowerPoint presentation forCodeBuddy's 2025 year-end summary.",
-      "Create a PowerPoint presentation on POP MART's development history, with one IP character featured on every slide."
-    ],
-    "promptTitles": [
-      "AI History PPT",
-      "AI Trends PPT",
-      "Year-end Summary PPT",
-      "POP MART PPT"
-    ],
-    "target": "all"
-  },
-  {
     "id": 11,
     "unified_id": 106,
     "name": "Product",
     "icon": "product-management",
     "mode": "working",
+    "interactionModes": [
+      "craft",
+      "plan"
+    ],
     "plugins": [
       {
         "id": 0,
@@ -257,9 +287,8 @@
       },
       {
         "id": 1,
-        "name": "document-skills",
-        "marketplaceName": "cb_teams_marketplace",
-        "marketplaceUrl": "https://cnb.cool/codebuddy/cbteamsmarketplace"
+        "name": "tencent-docx",
+        "marketplaceName": "workbuddy-builtin"
       }
     ],
     "prompts": [
@@ -315,16 +344,37 @@
       }
     ],
     "prompts": [
-      "Help me develop a corporate website. Company name: [Company name], main business: [Business description]. Requirements: Include homepage, about us, products/services, and contact us pages with a clean, professional style.",
-      "Help me develop an admin dashboard for managing [Content to manage]. Requirements: Include login page, data dashboard, list management, and form editing with responsive layout.",
-      "Help me develop a personal blog website. Blog theme: [Blog theme]. Requirements: Include article list, article detail, tag categories, and about page with Markdown rendering support.",
-      "Help me develop an e-commerce homepage selling [Product type]. Requirements: Include carousel, product categories, featured products, and promotional sections."
+      "Help me develop a corporate website. Company name: [Company name], main business: [Business description]. Requirements: Include homepage, about us, products/services, and contact us pages with a clean, professional style, and publish it online.",
+      "Help me develop an admin dashboard for managing [Content to manage]. Requirements: Include login page, data dashboard, list management, form editing with responsive layout, and publish it online.",
+      "Help me develop a personal blog website. Blog theme: [Blog theme]. Requirements: Include article list, article detail, tag categories, and about page with Markdown rendering support, and publish it online.",
+      "Help me develop an e-commerce homepage selling [Product type]. Requirements: Include carousel, product categories, featured products, promotional sections, and publish it online."
     ],
     "promptTitles": [
       "Corporate Website",
       "Admin Dashboard",
       "Personal Blog",
       "E-commerce Homepage"
+    ],
+    "target": "all"
+  },
+  {
+    "id": 50,
+    "unified_id": 129,
+    "name": "Mini Program",
+    "icon": "mini-program",
+    "mode": "coding",
+    "plugins": [],
+    "prompts": [
+      "Help me develop a WeChat Mini Program for event registration. The event name is [Event Name], targeting [Target Audience]. Requirements: Include an event homepage, event details page, online registration, and registration records page. Support WeChat authorized login. Store event and registration data in a cloud database, and store event images in cloud storage. The interface should adopt a clean mobile Mini Program design that fits the business scenario, highlighting core content and primary actions, maintaining a clear information hierarchy and a compact yet comfortable layout, using a consistent icon style, and avoiding Emojis.",
+      "Help me develop a WeChat Mini Program for community group buying, mainly offering [Product Type]. Requirements: Include a group buying homepage, product list, group buying details page, and order records page. Support WeChat authorized login. Store product and order data in a cloud database, and store product images in cloud storage. The interface should adopt a clean mobile Mini Program design that fits the business scenario, highlighting core content and primary actions, maintaining a clear information hierarchy and a compact yet comfortable layout, using a consistent icon style, and avoiding Emojis.",
+      "Help me develop a WeChat Mini Program for store appointments. The store name is [Store Name], providing [Service Type]. Requirements: Include a store homepage, service items, appointment time selection, and appointment records page. Support WeChat authorized login. Store appointment data in a cloud database, and store service images in cloud storage. The interface should adopt a clean mobile Mini Program design that fits the business scenario, highlighting core content and primary actions, maintaining a clear information hierarchy and a compact yet comfortable layout, using a consistent icon style, and avoiding Emojis.",
+      "Help me develop a WeChat Mini Program for restaurant ordering. The restaurant name is [Restaurant Name], specializing in [Cuisine Type]. Requirements: Include a restaurant homepage, dish categories, dish details page, shopping cart, and order records page. Support WeChat authorized login. Store dish and order data in a cloud database, and store dish images in cloud storage. The interface should adopt a clean mobile Mini Program design that fits the business scenario, highlighting core content and primary actions, maintaining a clear information hierarchy and a compact yet comfortable layout, using a consistent icon style, and avoiding Emojis."
+    ],
+    "promptTitles": [
+      "Event Registration Mini Program",
+      "Community Group Buying Mini Program",
+      "Store Appointment Mini Program",
+      "Restaurant Ordering Mini Program"
     ],
     "target": "all"
   },
@@ -347,16 +397,16 @@
       }
     ],
     "prompts": [
-      "Use CodeBuddy SDK to create an Agent Web application for [Describe the Agent's purpose]. (Please use skill codebuddy-chat-web)",
-      "Use CodeBuddy SDK to initialize a chat application with functionality: [Describe chat functionality]. (Please use skill codebuddy-chat-web)",
-      "Use CodeBuddy SDK to create a client-side Agent Web application that implements [Describe project functionality]. (Please use skill codebuddy-chat-web, create a web app wrapped with Electron, ensuring it can be developed using a web browser)",
-      "Use CodeBuddy SDK to create an 'Intelligent Customer Service Agent' Web application. Requirements: multi-turn conversation support, FAQ knowledge base retrieval, automatic intent recognition (refund / order inquiry / technical support), auto-escalation to human agents when unresolved, persistent conversation history storage, and an admin dashboard to view chat logs and satisfaction statistics (Please use skill codebuddy-chat-web)"
+      "Help me create a Knowledge Q&A Agent web application that allows users to enter questions and receive answers based on content from a knowledge base. Integrate a large language model (LLM) and deploy the application online.",
+      "Help me create an AI Customer Support Agent web application with support for multi-turn conversations, FAQ knowledge base retrieval, automatic user intent recognition (such as refunds, order inquiries, and technical support), automatic escalation to a human agent when an issue cannot be resolved, persistent conversation history storage, and an admin dashboard for viewing conversation records and customer satisfaction statistics. Store data in the cloud, integrate a large language model (LLM), and deploy the application online.",
+      "Help me create a Personal Information Manager Agent web application that allows users to capture scattered thoughts, reference materials, and to-do items, and automatically categorize, summarize, and connect related information. Support keyword search, intelligent Q&A, key information extraction, and task organization, and generate periodic summaries and suggested next actions based on existing content. Store data in the cloud, integrate a large language model (LLM), and deploy the application online.",
+      "Help me create a Data Analysis Agent web application that allows users to upload or enter data and use natural language to perform data queries, trend analysis, anomaly detection, and metric comparisons, while automatically generating analytical insights and data visualizations. Store data in a cloud database, integrate a large language model (LLM), and deploy the application online."
     ],
     "promptTitles": [
-      "Agent Web App",
-      "Init Chat App",
-      "Client-side Agent App",
-      "Customer Service Agent"
+      "Knowledge Q&A Agent",
+      "AI Customer Support Agent",
+      "Personal Information Manager Agent",
+      "Data Analysis Agent"
     ],
     "target": "all"
   },
@@ -426,233 +476,158 @@
     "target": "all"
   },
   {
-    "id": 30,
-    "unified_id": 113,
-    "name": "Web Design",
-    "icon": "web",
-    "mode": "design",
-    "plugins": [
-      {
-        "id": 0,
-        "name": "ardot-design-generator",
-        "marketplaceName": "cb_teams_marketplace"
-      }
+    "id": 44,
+    "unified_id": 123,
+    "name": "Latest News",
+    "icon": "wb-view",
+    "mode": "working",
+    "interactionModes": [
+      "quick"
     ],
+    "plugins": [],
     "prompts": [
-      "Design a cyberpunk-style personal portfolio website. The primary palette is pure black background plus neon pink (#FF2E93) and neon cyan (#00F0FF), with headings featuring a glitch-art animation effect. The hero section is a large '> HELLO_WORLD' typewriter effect, with 6 projects shown below in a grid of cards. On hover, card borders emit a neon glow. The overall atmosphere should feel like Blade Runner 2049.",
-      "Design a sneaker culture introduction website page, including a Hero section, a timeline of iconic sneaker evolution, street culture stories, and signature brand collaborations — streetwear, bold, and full of attitude.",
-      "Design a creative design website page from a Neo-Brutalism designer's perspective, combining brutalism's hard edges with saturated candy color blocks, bold outlines, and offset shadows. Visual design concept: thick borders, large rounded corners or hard-angled blocks, saturated pink/yellow/blue/green, bold sans-serif or monospace fonts; prominent offset shadows. Use sticker/hand-drawn elements to add playfulness while keeping layout divisions clear. Material and texture: solid fills, noise/stripe backgrounds, sticker/graffiti symbols; shadows are short but with clear offset, borders 2-4px. Avoid excessive glass and gradients. Overall mood: bold, playful yet orderly, like an interface made of colorful building blocks."
+      "Summarize the three most noteworthy news stories today in plain language.",
+      "Tell me how the weather has changed recently and what to watch out for.",
+      "Explain recent new regulations that affect ordinary people.",
+      "Tell me what topics people have been discussing lately.",
+      "Share a few warm and interesting small news stories from recently."
     ],
     "promptTitles": [
-      "Cyberpunk Portfolio",
-      "Sneaker Culture Website",
-      "Neo-Brutalism Website"
+      "Today's top stories",
+      "Recent weather changes",
+      "New rules for daily life",
+      "Trending topics",
+      "Heartwarming news"
     ],
     "target": "all"
   },
   {
-    "id": 31,
-    "unified_id": 114,
-    "name": "Mobile App",
-    "icon": "phone",
-    "mode": "design",
-    "plugins": [
-      {
-        "id": 0,
-        "name": "ardot-design-generator",
-        "marketplaceName": "cb_teams_marketplace"
-      }
+    "id": 45,
+    "unified_id": 124,
+    "name": "Writing Help",
+    "icon": "wb-ai-edit",
+    "mode": "working",
+    "interactionModes": [
+      "quick"
     ],
+    "plugins": [],
     "prompts": [
-      "Design a fitness App. Create a complete user registration flow and a workout data dashboard page for a fitness tracking App, with charts that display daily exercise data.",
-      "Referencing Xiaohongshu's (Little Red Book) design style, help me design a discovery page for a content community App, featuring a waterfall card layout and search/filter functionality.",
-      "Design a youth-oriented city check-in social App called 'CityGo' with a bold, vibrant, Y2K retro-futuristic style. The primary colors are fluorescent green, electric purple, and bright yellow, with extensive use of bold sans-serif fonts and irregular sticker elements. The home page features a city map scattered with bubbles marking user-captured check-in spots; tapping a bubble opens a 3x3 photo grid. The post interface supports adding hand-drawn doodles, stickers, and glitch-art filters to photos. All buttons are large rounded pill shapes with a bouncy tap animation. The overall feel is like a digital doodle-and-sticker book."
+      "Write a short leave-of-absence message to send to my manager.",
+      "Write a polite message reminding someone to finish on time.",
+      "Write a natural, not-awkward birthday wish for a friend.",
+      "Write a sincere apology text that is not overly formal.",
+      "Write a short social media post based on today's mood."
     ],
     "promptTitles": [
-      "Fitness App Design",
-      "Community Discovery Page",
-      "Y2K Social App"
+      "Write a leave message",
+      "Politely follow up",
+      "Write a birthday wish",
+      "Write an apology text",
+      "Write a social post"
     ],
     "target": "all"
   },
   {
-    "id": 32,
-    "unified_id": 115,
-    "name": "Design System",
-    "icon": "paint",
-    "mode": "design",
-    "plugins": [
-      {
-        "id": 0,
-        "name": "ardot-design-generator",
-        "marketplaceName": "cb_teams_marketplace"
-      }
+    "id": 46,
+    "unified_id": 125,
+    "name": "Daily Translation",
+    "icon": "wb-translate",
+    "mode": "working",
+    "interactionModes": [
+      "quick"
     ],
+    "plugins": [],
     "prompts": [
-      "Help me build a complete Design System, including a color system, typography hierarchy, spacing rules, and foundational component specification documentation.",
-      "Referencing Ant Design's style, design a component library specification for my admin management system, including button, form, table, and modal components.",
-      "Create a Design Token system for a mobile App that supports light/dark theme switching, and output a complete variable table for colors, border radii, and shadows."
+      "Translate this English sentence into natural, easy-to-understand Chinese.",
+      "Translate this menu and explain what each dish is.",
+      "Translate this delivery update and tell me where my package is.",
+      "Tell me in simple terms what this email is mainly about.",
+      "Teach me how to ask how to get somewhere in simple English."
     ],
     "promptTitles": [
-      "Complete Design System",
-      "Admin Component Library",
-      "Design Token System"
+      "What does this mean",
+      "Translate a menu",
+      "Read a delivery update",
+      "Summarize this email",
+      "Ask for directions"
     ],
     "target": "all"
   },
   {
-    "id": 33,
-    "unified_id": 116,
-    "name": "Web App",
-    "icon": "tools",
-    "mode": "design",
-    "plugins": [
-      {
-        "id": 0,
-        "name": "ardot-design-generator",
-        "marketplaceName": "cb_teams_marketplace"
-      }
+    "id": 47,
+    "unified_id": 126,
+    "name": "Everyday Know-how",
+    "icon": "search",
+    "mode": "working",
+    "interactionModes": [
+      "quick"
     ],
+    "plugins": [],
     "prompts": [
-      "Design a complete interface for a project management WebApp, including a dashboard overview, task kanban, team member management, and project settings pages. Style inspired by Linear—clean and efficient.",
-      "Design a resume-building Web App called 'Resume.io' with a clean, efficient, WYSIWYG style. Use a split-screen layout: the left side is the form editing area (collapsible panels for personal info, education, work experience, skills, etc.), and the right side displays a live preview of an A4-sized resume (with realistic shadows). The top bar allows switching between 6 template styles (minimalist black-and-white, business blue, designer colorful, academic serif, etc.), and the top-right corner has 'Download PDF' and 'Share Link' buttons. The preview on the right updates in real time as users edit, with modified fields briefly highlighted. The overall goal is to let users produce a high-quality resume within 10 minutes.",
-      "Design a SaaS data analytics platform WebApp interface, including data source connections, a visualization chart editor, report generation, and permission management modules. Professional business color scheme."
+      "Why do staircases usually have an odd number of steps like 7, 9 or 11?",
+      "How should eggs be stored so they stay fresh longer?",
+      "My clothes shrank in the wash. Any simple ways to fix them?",
+      "What charge level is best for protecting my phone battery?",
+      "Why does cutting onions make you cry, and how can I avoid it?"
     ],
     "promptTitles": [
-      "Project Management WebApp",
-      "Resume Builder WebApp",
-      "Data Analytics Platform"
+      "Why odd-numbered stairs",
+      "Keep eggs fresh longer",
+      "Fix shrunken clothes",
+      "Best phone charge level",
+      "Why onions make you cry"
     ],
     "target": "all"
   },
   {
-    "id": 34,
-    "unified_id": 117,
-    "name": "PPT Design",
-    "icon": "slide",
-    "mode": "design",
-    "plugins": [
-      {
-        "id": 0,
-        "name": "ardot-design-generator",
-        "marketplaceName": "cb_teams_marketplace"
-      }
+    "id": 48,
+    "unified_id": 127,
+    "name": "Work Tips",
+    "icon": "powerpoint",
+    "mode": "working",
+    "interactionModes": [
+      "quick"
     ],
+    "plugins": [],
     "prompts": [
-      "Help me generate a set of launch event slide mockups for a Chinese-style wuxia open-world exploration game, including 6 main pages. The layout should be large and suitable for big-screen playback at the venue. Boldly use SVG decorations on the slides, keep page elements rich and refined, and showcase the game's art design, UI design, rich content, and other elements. Use \"ai\" mode wherever images need to be generated.",
-      "Create a 6-page PPT introducing Minecraft, with a cool and rich pixel-style layout and a pixel-themed design style.",
-      "Create a master's thesis defense PPT, 10 pages total, in a rigorous academic style. The main colors use dark navy (#0F172A) for titles, charcoal gray (#334155) for body text, and academic red (#B91C1C) to highlight key findings, with a pure white background. The page structure is: cover, research background and significance, literature review, research questions and hypotheses, research methodology, experimental design, data analysis, main conclusions, limitations and future work, and acknowledgments. Charts use classic black-white-gray colors, with no gradients. Each page has a chapter number in the top-right corner to help the defense committee navigate quickly. Chinese fonts use SimSun; English uses Times New Roman. The footer includes the school logo, name, student ID, and date. The overall feel is restrained and professional, highlighting the academic value of the research.",
-      "Create a streamlined roadshow PPT for a Web3 NFT project, 9 pages total, in a 'Cyberpunk × Y2K Retro-Future' style. Use pure black (#000000) as the background, with acid fluorescent green (#C6FF00) and electric magenta (#FF006E) as the dual primary accent colors, and metallic silver (#C0C0C0) as a supporting color. The cover uses ASCII character art to spell out the project name, with a background of grid perspective lines extending toward a vanishing point to create a cyberspace feel. Title characters are randomly offset and split into RGB chromatic-aberration layers. Inner page layouts break the conventional grid, with text carried on 45-degree skewed color blocks, and data displayed using seven-segment digital-tube fonts like an old calculator. The roadmap page uses a subway-map style with hexagonal nodes outlined with glowing strokes. On the team page, each member is shown as a 3D low-poly avatar placeholder (labeled 'Pixel Avatar') with an abbreviated wallet address below the name. The footer has a scrolling ticker showing '//TRANSMITTING DATA//' on loop. The overall vibe is rebellious, gritty, and rooted in internet underground culture.",
-      "Create an investment pitch PPT for an Omakase Japanese cuisine franchise, 10 pages total, in a 'Wabi-sabi aesthetic × Extreme negative space' style. Use rice-white washi paper color (#F5F0E8) as the main background, with ink black (#1A1A1A) and cinnabar red (#B8292E) accents in key positions. Negative space occupies more than 70% of each page; text is sparse and restrained, often with just a single line plus a stamp-like mark per page. The cover features only a hand-brushed calligraphy character '鮨' (in cinnabar red) in the bottom-left corner, with a vertical line of small text in the top-right noting the brand name — the rest is blank. Titles use a Japanese calligraphy style mixing kana and kanji; body text uses an ultra-thin sans-serif. All divider lines are replaced with hand-drawn ink brushstrokes. Data pages break conventional charts, presenting key numbers as haiku-style short phrases arranged vertically, such as '一期一会 / 八席 / 三十六道'. The franchise policy page unfolds as a Japanese scroll, read from right to left. Image placeholders use Japanese square-seal styles and irregular ink-blot shapes (labeled 'Dish Photo', 'Chef Portrait'). The overall feel is tranquil, restrained, and zen-like, conveying brand tone over information density.",
-      "Create a PPT for an AI hardware product launch event, 10 pages total, in a 'Minimalist Futurism × Dieter Rams homage' style. Use pure light gray-white (#F5F5F7) as the main background, near-black (#1D1D1F) for text, and the product's signature bright orange (#FF5C1A) as the sole accent color used only for key data. The entire deck follows the 'less is more' principle: each page has at most 7 characters as the title, with body text under 20 characters. The cover shows only the three-letter product name 'ORB' centered, at a font size occupying 1/3 of the screen height, with a small '2026 - 04 - 15' line below. The product showcase page uses a fully centered single-element composition: the product image placeholder is a perfect circle at the center (labeled 'Product Hero Shot'), surrounded by abundant breathing space, with a small model number line at the bottom. The spec comparison page uses ultra-fine 1px divider lines to split the page into an equal grid, with each cell containing only one number and one word (such as '12h' and 'Battery Life'). The overall feel is calm, premium, and full of breathing space, making the product itself the sole protagonist."
+      "When there is a lot to do, how should I order my tasks for the day?",
+      "I get nervous speaking up in meetings. Any simple ways to ease that?",
+      "How do I quickly note down what really matters while someone is talking?",
+      "When my plate is full, how do I politely decline extra last-minute tasks?",
+      "My computer has more and more files. How should I sort them to find things easily?"
     ],
     "promptTitles": [
-      "Game Launch Slides",
-      "Pixel-style Minecraft PPT",
-      "Thesis Defense PPT",
-      "NFT Roadshow PPT",
-      "Omakase Pitch PPT",
-      "AI Hardware Launch PPT"
+      "Plan my workday",
+      "Nervous in meetings",
+      "Capture key points fast",
+      "Decline extra tasks",
+      "Organize too many files"
     ],
     "target": "all"
   },
   {
-    "id": 35,
-    "unified_id": 118,
-    "name": "Interactive Prototype",
-    "icon": "mouse",
-    "mode": "design",
-    "plugins": [
-      {
-        "id": 0,
-        "name": "ardot-design-generator",
-        "marketplaceName": "cb_teams_marketplace"
-      }
+    "id": 49,
+    "unified_id": 128,
+    "name": "Travel Guide",
+    "icon": "wb-publish",
+    "mode": "working",
+    "interactionModes": [
+      "quick"
     ],
+    "plugins": [],
     "prompts": [
-      "Help me design an interactive prototype for a task management tool, including switching between board view and list view, as well as task drag-and-drop reordering.",
-      "Design a personal health data Dashboard with a minimalist medical style. Use pale cyan-white (#F0F7F7) as the main background, with tech blue (#0EA5E9) and vibrant green (#22C55E) as accent colors to indicate positive health metrics. The top section is a 'Today Overview' card with four circular progress rings for steps, heart rate, sleep, and calories. Below are a weekly trend line chart and a monthly calendar check-in view that can be toggled. Cards are uniformly white with a light blue border and 12px rounded corners. Use a clear sans-serif font, with large prominent type for data values. The overall feel is fresh and trustworthy, emphasizing clear data presentation.",
-      "Design an interactive prototype for a data visualization large-screen display, supporting time-range filtering, chart drill-down, and full-screen display mode switching."
+      "Recommend short, low-effort trips that are good for relaxing on a weekend.",
+      "It is my first time taking a high-speed train. What should I prepare and note?",
+      "What should I bring for a three-day trip, and how do I pack light?",
+      "What practical items should I prepare for a day at the beach?",
+      "How do I pick travel dates to avoid long queues and crowds?"
     ],
     "promptTitles": [
-      "Task Management Prototype",
-      "Health Data Dashboard",
-      "Data Wall Prototype"
-    ],
-    "target": "all"
-  },
-  {
-    "id": 36,
-    "unified_id": 119,
-    "name": "Brand Design",
-    "icon": "mouse",
-    "mode": "design",
-    "plugins": [
-      {
-        "id": 0,
-        "name": "ardot-design-generator",
-        "marketplaceName": "cb_teams_marketplace"
-      }
-    ],
-    "prompts": [
-      "Design a tech-style brand Logo with deep blue as the primary color, suitable for an AI product. It should be simple and recognizable, and also provide standard color values and usage guidelines.",
-      "Design a complete visual identity system for my coffee brand, including Logo, color palette, typography guidelines, and business card style, with a warm and artistic style.",
-      "Referencing the design styles of Apple and Stripe, design the brand identity for my SaaS product, including the main Logo, icon variations, and brand color palette."
-    ],
-    "promptTitles": [
-      "Tech Brand Logo",
-      "Coffee Brand Identity",
-      "SaaS Brand Identity"
-    ],
-    "target": "all"
-  },
-  {
-    "id": 37,
-    "unified_id": 120,
-    "name": "Icons & Illustrations",
-    "icon": "mouse",
-    "mode": "design",
-    "plugins": [
-      {
-        "id": 0,
-        "name": "ardot-design-generator",
-        "marketplaceName": "cb_teams_marketplace"
-      }
-    ],
-    "prompts": [
-      "Help me design a set of 24 linear-style general-purpose icons suitable for a backend management system, covering common scenarios such as Home, Users, Settings, and Data.",
-      "Design a set of cute-style illustrated icons for a children's education App, covering 12 scenes across the themes of reading, math, music, and science.",
-      "Design a set of flat-style financial icons covering 16 scenarios such as payment, billing, wallet, transfer, and wealth management, with a unified color scheme."
-    ],
-    "promptTitles": [
-      "Admin Line Icons",
-      "Kids Education Illustrations",
-      "Flat Finance Icons"
-    ],
-    "target": "all"
-  },
-  {
-    "id": 38,
-    "unified_id": 121,
-    "name": "Visual Posters",
-    "icon": "mouse",
-    "mode": "design",
-    "plugins": [
-      {
-        "id": 0,
-        "name": "ardot-design-generator",
-        "marketplaceName": "cb_teams_marketplace"
-      }
-    ],
-    "prompts": [
-      "Help me design a promotional poster for a product launch event with the theme of AI innovation, size 1080x1920, highlighting the launch date and product highlights.",
-      "Design a set of e-commerce Banners for the Double 11 sales event, 3 banners in different sizes with a unified style, emphasizing discount information and a limited-time flash sale atmosphere.",
-      "Design an event poster for a tech summit, highlighting the headshots of three speakers, the event time and location, and the registration QR code."
-    ],
-    "promptTitles": [
-      "Product Launch Poster",
-      "Double 11 Banners",
-      "Tech Summit Poster"
+      "Relaxing weekend ideas",
+      "First high-speed rail trip",
+      "Pack for a 3-day trip",
+      "What to bring to the beach",
+      "Avoid tourist crowds"
     ],
     "target": "all"
   }

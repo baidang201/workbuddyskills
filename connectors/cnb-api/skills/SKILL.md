@@ -5,8 +5,6 @@ description: CNB 平台交互命令，支持代码仓库、Issue、PR、CI、制
 
 # cnb-api
 
-操作 CNB 平台资源的 CLI 工具。
-
 ## 快捷命令
 
 issues:
@@ -32,26 +30,50 @@ pulls:
 - `cnb pulls add-labels --labels ready --labels approved` — 添加标签
 - `cnb pulls check-status` — 查看 CI 状态
 - `cnb pulls list-reviews` — 查看评审列表
+- `cnb pulls submit-review` — 发送评审评论或提交评审结论
 - `cnb pulls list-assignees` — 查看处理人
 - `cnb pulls get-ci-logs --sn 构建号（可选）` — 获取 CI 失败日志
 - `cnb pulls get-ci-timing --sn 构建号（可选）` — 分析 CI 耗时瓶颈
 - `cnb pulls get-imgs --img-path 图片路径` — 获取 PR 图片
 - `cnb pulls get-files --file-path 附件路径` — 获取 PR 附件
 
-注意事项：
+skills:
+- `cnb skills list -p -a codebuddy --json` — 列出本地 skills
 
-- **参数自动识别**：快捷命令中的 Issue/PR 编号会自动从环境变量识别，无需额外传递。
-- **默认仅需摘要**：默认会精简响应输出结果，添加 `--verbose` 输出完整数据。
-- **单引号传参**：当 bash 的参数为多行文本时，使用单引号可减少防止命令注入攻击。
-- **快捷命令适用范围**: 快捷命令只能操作当前仓库的当前 Issue/PR，跨仓库或跨编号操作请参考 `更多 API`。
-- **关于提及和召唤**: 评论中直接 @npc 会召唤 npc 干活，如果只提及不召唤，应使用反引号包裹 `@npc`。
+## 使用约定
+
+- **默认摘要省流**：默认精简输出，加 `--verbose` 输出完整数据。
+- **多行用单引号**：bash 参数为多行文本时用单引号，降低命令注入风险。
+- **创建 issue 默认带 `--work-mode`**：`cnb issues create-issue` 已默认注入 `work_mode: true`，不必再传；`--work-mode` 也仍可从 `--help` 看到并显式覆盖。
+
+## issue/pr 访问说明
+
+编号同 `--repo` 一样默认从环境变量识别，无需传递；用 `--repo <组织/仓库>`、`--number <编号>` 可覆盖。
+
+例如：
+
+- `cnb issues get --number 66`
+- `cnb pulls get --repo x/y --number 99`
+
+## 图片与附件解析
+
+正文里图片、附件的下载地址形如：
+
+- 图片 `.../-/imgs/<issues|pulls>/<数字 ID>/<key>/<文件名>`
+- 附件 `.../-/files/<issues|pulls>/<数字 ID>/<key>/<文件名>`
+
+`图片路径/附件路径`=`<issues|pulls>/<数字 ID>/<key>/<文件名>`，即 `参数` 取 `<issues|pulls>/` 开头的**完整尾段**。
 
 ## 常用链接
 
-在生成链接时请遵循下面的结构：
+生成链接时遵循以下结构：
 
 - Issue: `<host>/<slug>/-/issues/<number>`
 - PR: `<host>/<slug>/-/pulls/<number>`
+
+## 正文中引用跨仓库 Issue / PR
+
+- 统一写 `<slug>#<number>` 或完整链接（格式见上）。
 
 ## 更多 API
 

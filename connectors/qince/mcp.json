@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "qince": {
+      "type": "streamableHttp",
+      "url": "https://mcp.qince.com/mcp/message",
+	  "timeout": 30000,
+      "description": "勤策 MCP 代理，负责签名并转发业务请求"
+    }
+  }
+}

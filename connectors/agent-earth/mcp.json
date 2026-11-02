@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "agentearth": {
+      "type": "streamableHttp",
+      "url": "https://agentearth.ai/mcp-server/r/8oo9zmDn",
+      "timeout": 300000
+    }
+  }
+}

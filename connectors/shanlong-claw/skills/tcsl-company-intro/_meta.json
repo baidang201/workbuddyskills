@@ -1,0 +1,11 @@
+{
+  "name": "tcsl-company-intro",
+  "display_name": "天财商龙公司介绍",
+  "description": "介绍天财商龙公司概况与当前支持能力；会员分析仅支持 CRM8，非 CRM8 客户使用没有数据。",
+  "version": "1.0.174",
+  "locale": "zh-CN",
+  "author": "shanglong-skill-creator",
+  "mode": "ai",
+  "skill_type": "business",
+  "related_skills": []
+}

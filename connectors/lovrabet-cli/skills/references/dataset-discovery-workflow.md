@@ -4,6 +4,8 @@
 
 在执行 Instant API 数据操作前，需要先找到目标数据集并了解其字段结构。
 
+按已知线索选择筛选参数：数据集名称用 `--name`，物理表名用 `--table-name`，数据集 code 用 `--code`。下面按名称验证应用的示例，在已知物理表名时可将 `--name "<关键词>"` 换成 `--table-name "<表名前缀>"`。
+
 ## 先不要默认查 app
 
 `dataset` 工作流的第一步不是固定的 `app list`，而是先判断当前是否已经有明确 app 上下文。
@@ -52,7 +54,7 @@ lovrabet dataset list --app <name> --name "<关键词>"
 
 ### api-doc list/detail — 查看运行态 API 文档
 
-写 personal BFF 或复杂数据访问说明前，先用 API 文档收敛可用接口：
+写 Personal Backend Function 或复杂数据访问说明前，先用 API 文档收敛可用接口：
 
 ```bash
 lovrabet api-doc list --category dataset
@@ -71,6 +73,12 @@ lovrabet dataset list
 # 按名称过滤（服务端模糊匹配）
 lovrabet dataset list --name "订单"
 
+# 仅按物理表名前缀过滤，无需同时提供 --name 或 --code
+lovrabet dataset list --table-name crm_product
+
+# 同时限定数据集名称和物理表名（AND）
+lovrabet dataset list --name "商品" --table-name crm_product
+
 # 按 code 过滤（服务端精确匹配）
 lovrabet dataset list --code "abc123def4567890abcdef012345678"
 
@@ -84,9 +92,14 @@ lovrabet dataset list --format json
 
 | Flag | 类型 | 必填 | 说明 |
 |------|------|------|------|
-| `--name` | string | 否 | 按名称模糊过滤（服务端） |
+| `--name` | string | 否 | 按数据集名称包含匹配（服务端） |
+| `--table-name` | string | 否 | 透传为 `tableName`，按物理表名前缀匹配（服务端） |
 | `--code` | string | 否 | 按 dataset code 精确过滤（服务端，32 位 hex） |
 | `--format` | string | 否 | 输出格式：`json` / `pretty` / `table` |
+
+`--name`、`--table-name`、`--code` 均为可选参数：可只传任意一个，也可不传筛选参数；多个参数同时传入时按 AND 组合，不会互相覆盖。不传或传空字符串时不增加对应筛选条件。
+
+`--table-name` 使用服务端 SQL LIKE 前缀匹配，不保证精确命中或唯一结果。例如 `crm_product` 也可能命中 `crm_product_detail`；`%` 和 `_` 保留 SQL LIKE 通配符含义，其中 `_` 可匹配任意单个字符。核对返回的 `table`、`name` 和 `code` 后再选择目标数据集，不要直接取第一条。
 
 ### dataset detail — 查看数据集结构
 
@@ -157,4 +170,4 @@ lovrabet data filter --code 2874b19935c240659e8872e9e2416ae3 \
 3. `dataset detail` 返回的字段兼容 v1（properties）和 v2（fields）两种数据集格式；运行态接口未给完整字段时会兜底字段名
 4. 数据集的 code 是 32 位 hex UUID，是所有 `data *` 命令的必填参数
 5. 当业务需求不明确落在哪个 app 时，先验证 `defaultApp`；验证不成立再 `app list`，并用 `dataset list --app <name> --name <关键词>` 做验证式收敛
-6. 写 personal BFF 或其他数据访问源码前，除非用户已经提供明确数据，否则先用 `api-doc`、`dataset detail`、`dataset sdk-doc` 和只读 `data` 命令确认真实结构
+6. 写 Personal Backend Function 或其他数据访问源码前，除非用户已经提供明确数据，否则先用 `api-doc`、`dataset detail`、`dataset sdk-doc` 和只读 `data` 命令确认真实结构

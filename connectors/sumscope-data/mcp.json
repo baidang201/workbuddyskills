@@ -1,0 +1,9 @@
+{
+    "mcpServers": {
+        "sumscope-data": {
+            "url": "https://data-api.qeubee.cn/sumscope/common/mcp/stream",
+            "type": "streamableHttp",
+            "timeout": 30000
+        }
+    }
+}

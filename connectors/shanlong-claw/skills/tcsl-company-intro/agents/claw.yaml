@@ -1,0 +1,14 @@
+display_name: "天财商龙公司介绍"
+display_description: "介绍天财商龙公司概况与当前支持能力；会员分析仅支持 CRM8，非 CRM8 客户使用没有数据。"
+skill_type: "business"
+skill_tag_level1: "official"
+skill_tag_level2:
+  - "company_intro"
+routing:
+  skill_id: "tcsl-company-intro"
+  allow_implicit_invocation: true
+  prefer_when:
+    - "天财商龙 / 商龙公司介绍"
+    - "商龙是谁 / 做什么"
+    - "公司规模、定位、服务网络"
+    - "当前支持功能、CRM8 适用范围"

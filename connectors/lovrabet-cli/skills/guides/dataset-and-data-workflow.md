@@ -9,7 +9,7 @@
 1. 先判断 app 是否明确  
    不明确时，先看 [app-resolution.md](app-resolution.md)
 
-2. 需要写 personal BFF 或知识库内容时，先做发现
+2. 需要写 Personal Backend Function 或知识库内容时，先做发现
 
 ```bash
 lovrabet api-doc list --category dataset
@@ -20,15 +20,24 @@ lovrabet api-doc detail --code dataset_data_filter
 
 3. 定位数据集
 
+根据已有线索选择一个筛选参数即可：数据集名称用 `--name`，物理表名用 `--table-name`，数据集 code 用 `--code`。不要要求用户补齐另外两个参数。
+
 ```bash
 lovrabet dataset list --name "<关键词>"
+
+# 已知物理表名时
+lovrabet dataset list --table-name crm_product
 ```
+
+多个筛选参数同时传入时按 AND 组合。表名采用前缀匹配，可能返回多个候选；先核对返回的 `table`、`name` 和 `code`。详细规则见 [数据集发现](../references/dataset-discovery-workflow.md)。
 
 如需限定候选 app：
 
 ```bash
 lovrabet dataset list --app <name> --name "<关键词>"
 ```
+
+已知物理表名时，将上述 `--name "<关键词>"` 换成 `--table-name "<表名前缀>"`。
 
 4. 看数据集结构
 
@@ -75,7 +84,7 @@ lovrabet data filter --code <datasetCode> --params '{"where":{"status":{"$eq":"a
 以下情况只用 `dataset list` 就够：
 
 - 用户只是问“有哪些数据集”
-- 用户只是想按名称搜索数据集
+- 用户只是想按数据集名称或物理表名前缀搜索数据集
 - 只需要数据集 code 和字段名数组
 
 ## 什么时候必须看 `dataset detail`
@@ -91,7 +100,7 @@ lovrabet data filter --code <datasetCode> --params '{"where":{"status":{"$eq":"a
 
 以下场景补一轮 `dataset sdk-doc`：
 
-- 需要在 personal BFF 或其他可交付源码中调用运行态 SDK
+- 需要在 Personal Backend Function 或其他可交付源码中调用运行态 SDK
 - 需要确认 SDK 参数结构，而不只是字段名
 - 要把数据访问方式写进可交付源码或文档
 
@@ -127,6 +136,8 @@ Backend Function HOOK 不是 Agent 可直接执行的端点。它绑定到某个
 
 ## 批量新增的边界
 
+Excel 导入先核对真实 `source`：`METADATA` 使用 [可恢复 Excel 导入](../references/lovrabet-excel-import.md)；`DB_TABLE` 使用 [Excel 转换与分批新增指引](../references/lovrabet-db-table-excel-import.md)。后者由 Agent/本地工具完成转换、整份数据校验和拆批，再逐批调用 `lovrabet data batchCreate`，回读确认后推进；没有内建检查点或 `--resume`。来源缺失、未知、目标不匹配或权限/契约失败时停止，不自动切换接口。非 Excel `batchCreate` 仍支持原有 METADATA 与 DB_TABLE 调用。
+
 `lovrabet data batchCreate` 只适合“同一数据集多条新增”，用于减少请求次数。参数必须是 JSON 数组，或 `{"items":[...]}`：
 
 ```bash
@@ -134,9 +145,9 @@ lovrabet data batchCreate --code <datasetCode> --params '[{"name":"a"},{"name":"
 lovrabet data batchCreate --code <datasetCode> --params '[{"name":"a"},{"name":"b"}]'
 ```
 
-使用前仍要先做 `dataset detail`，确认字段可写、必填字段和业务唯一键。执行后按业务唯一键只读核对，避免“请求结果未知”时重复写入。
+使用前仍要先做 `dataset detail`，确认字段可写、必填字段和业务唯一键。`batchCreate --dry-run` 只展示请求，不验证数据库约束、HOOK 或服务端写权限；字段与单批数量/字节上限必须按实际契约核对。执行后按真实 ID 或已确认唯一键完整回读；未知结果、缺少读取权限或内容冲突时暂停，不重发整个批次。
 
-不要在执行时直接用 `data batchCreate` 绕过 Backend Function 业务编排。只要写入涉及多个数据集、upsert、依赖顺序、幂等、失败恢复或 handoff 结果，就应调用业务级 `bff exec`，由函数或 CLI service 内部决定是否使用批量新增。Backend Function 写入类执行仍需先确认业务授权、Studio 权限和人工确认语义；CLI 将 `bff exec` 标记为 `read`，不等同于免审批写入。
+不要用普通 `data batchCreate` 替代已有业务编排。需要多个数据集、upsert、依赖顺序、统一事务或服务端幂等恢复时，使用已有且契约明确的业务级 `bff exec` 或服务。单数据集 METADATA 的专用 `import-excel` 自带已定义的恢复流程，不因“支持恢复”而额外要求 BFF；DB_TABLE 的本地台账也不能据此升级为自动幂等能力。Backend Function 写入仍需确认业务授权、权限和真实副作用，read 标签不等同于免审批写入。
 
 ## 高风险动作
 

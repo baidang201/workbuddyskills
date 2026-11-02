@@ -2,7 +2,7 @@
 
 ## Authentication required
 
-说明当前没有可用的 `accessKey`。
+说明当前没有可用的 `accessKey`，或服务端明确返回业务码 `201`。HTTP `401` 本身不能区分认证失败和权限不足。
 
 优先检查：
 
@@ -12,15 +12,21 @@
 
 如果确认只是没登录：
 
-- 先到 `https://user.lovrabet.com/user/ak` 创建 AccessKey
-- 想保留当前配置，执行 `lovrabet auth login`
-- 想清空当前作用域配置后重建认证，执行 `lovrabet auth init --access-key <ACCESS_KEY> [--env daily]`
+- 先执行 `lovrabet auth login --non-interactive`，到命令根据当前 `userDomain` 返回的地址创建 AccessKey
+- 想保留当前配置，使用 `lovrabet auth login --access-key <ACCESS_KEY>`
+- 想切换节点或重建连接配置，执行 `lovrabet config init --region cn|id|global`，再按需执行 `lovrabet auth login --access-key <ACCESS_KEY>`
+
+## Permission denied（业务码 202）
+
+`permission_denied` 表示权限检查拒绝，本次 HTTP 状态也可能为 `401`。先用 `lovrabet auth info` 确认当前用户，再核对应用、目标数据集及实际动作的角色授权。Backend Function 能进入执行，不代表它访问的每个数据集都已授权，`byTable` 也相同。
+
+保留当前用户和入口，报告拒绝；不要自动重新登录、切换 AK、添加系统执行参数或转用其他入口。只有业务码 `201` 或明确缺少凭证时，才按认证问题处理。
 
 ## 已登录，但业务命令仍失败
 
 优先检查：
 
-1. 当前 `env` 是否正确
+1. `lovrabet doctor` 显示的国家/地区和最终 Domain 是否正确
 2. 当前 AK 对应的是否是预期用户：`lovrabet auth info`
 3. `defaultApp` 是否能在 cache 中解析到 appcode
 4. 是否需要先刷新 app cache
@@ -29,20 +35,22 @@
 lovrabet app list --no-cache
 ```
 
-如果你怀疑当前作用域配置已经混乱，比如：
+如果你怀疑连接配置或认证信息不符合预期，比如：
 
 - `defaultApp` 明显不对
-- `env` 和预期不一致
 - `auth info` 返回的用户不是你预期的账号
-- 同一作用域里残留了不该继承的旧配置
+- `lovrabet doctor` 显示的 region 或 Domain 不符合预期
 
-可直接重建认证配置：
+分别重设全局连接配置和 AccessKey：
 
 ```bash
-lovrabet auth init --access-key <ACCESS_KEY> --env daily
+lovrabet config init --region cn
+lovrabet auth login --access-key <ACCESS_KEY>
 ```
 
-注意：这会清掉当前作用域里已有的其他配置字段，不只是 `accessKey`。
+如果业务节点在印尼，把第一条改成 `lovrabet config init --region id`。企业独立部署使用 `lovrabet config init --domain-config <file>`。
+
+`config init` 只替换全局 region/Domain 路由字段，`auth login` 只替换目标作用域的 AccessKey；两者都保留其他配置。最后执行 `lovrabet doctor` 核对最终生效的国家/地区和 Domain。
 
 ## `defaultApp` 已有，但仍然找不到 appcode
 
@@ -87,5 +95,5 @@ lovrabet doctor
 
 - 配置来源不清楚
 - `defaultApp` / `currentApp` 判断异常
-- 环境和实际请求不一致
+- 国家/地区或 Domain 和实际请求不一致
 - 认证信息看起来存在，但命令仍失败
